@@ -1,0 +1,34 @@
+name: production
+
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+jobs:
+  build-deploy-production:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Build
+        run: |
+          npm install
+          npm run lint
+          echo 'REACT_APP_BASE_URL="https://api.smeshub.id"' > .env
+          npm run build
+
+      - name: FTP to Server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.PRD_DROPLET_SSH_HOST }}
+          username: ${{ secrets.PRD_DROPLET_SSH_USERNAME }}
+          password: ${{ secrets.PRD_DROPLET_SSH_PASSWORD }}
+          port: 22
+          source: "./build/"
+          target: "/var/www/smeshub-dashboard"

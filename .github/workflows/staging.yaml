@@ -1,0 +1,35 @@
+name: staging
+
+on: 
+  push:
+    branches:
+      - "staging"
+  workflow_dispatch:
+jobs:
+  build-deploy-staging:
+    timeout-minutes: 5
+    if: github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Build
+        run: |
+          npm install
+          npm run lint
+          echo 'REACT_APP_BASE_URL="https://api.stg.smeshub.id"' > .env
+          npm run build
+
+      - name: FTP to Server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.STG_DROPLET_SSH_HOST }}
+          username: ${{ secrets.STG_DROPLET_SSH_USERNAME }}
+          password: ${{ secrets.STG_DROPLET_SSH_PASSWORD }}
+          port: 22
+          source: "./build/"
+          target: "/var/www/smeshub-dashboard"
