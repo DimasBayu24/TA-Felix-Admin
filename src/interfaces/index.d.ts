@@ -72,6 +72,8 @@ export interface IDestination {
   Place: string;
   PlaceOption: string;
   Price: number;
+  PictureUrl: string;
+  Description: string;
 }
 
 export interface ICustomer {
@@ -93,8 +95,11 @@ export interface IOrder {
 export interface IProductPackage {
   ID: string;
   Package: string;
-  DestinationPlace: string;
-  Price: number;
+  DestinationCity: string;
+  PricePackage: number;
+  PictureUrl: string;
+  Description: string;
+  TransportationID: number;
 }
 
 export interface ITransportation {
@@ -107,7 +112,7 @@ export interface ITransportation {
 export interface IOrderItem {
   ID: string;
   OrderID: string;
-  DestinationID: string
+  DestinationID: string;
 }
 
 export interface IProductOrder {

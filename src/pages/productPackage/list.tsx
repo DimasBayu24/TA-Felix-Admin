@@ -38,15 +38,33 @@ export const ProductPackageList: React.FC<IResourceComponentsProps> = () => {
           render={(value) => <TextField value={value} />}
         />
         <Table.Column
-          dataIndex="DestinationPlace"
-          key="DestinationPlace"
-          title="Destination Place"
+          dataIndex="DestinationCity"
+          key="DestinationCity"
+          title="Destination City"
           render={(value) => <TextField value={value} />}
         />
         <Table.Column
-          dataIndex="Price"
-          key="Price"
+          dataIndex="Description"
+          key="Description"
+          title="Description"
+          render={(value) => <TextField value={value} />}
+        />
+        <Table.Column
+          dataIndex="PricePackage"
+          key="PricePackage"
           title="Price"
+          render={(value) => <TextField value={value} />}
+        />
+        <Table.Column
+          dataIndex="TransportationID"
+          key="TransportationID"
+          title="Price"
+          render={(value) => <TextField value={value} />}
+        />
+        <Table.Column
+          dataIndex="PictureUrl"
+          key="PictureUrl"
+          title="PictureUrl"
           render={(value) => <TextField value={value} />}
         />
         <Table.Column<IProductPackage>

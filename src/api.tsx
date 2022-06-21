@@ -77,6 +77,9 @@ export const DashboardDataProvider = (
     if (body.Size) {
       body.Size = +body.Size;
     }
+    if (body.TransportationID) {
+      body.TransportationID = +body.TransportationID;
+    }
     const url = `${apiUrl}/${resource}`;
 
     const { data } = await httpClient.post(url, body);
@@ -184,7 +187,7 @@ export const DashboardDataProvider = (
   update: async ({ resource, id, variables }) => {
     const keys = Object.keys(variables).filter((x) => x.includes('FilesNormalizer'));
     const body = omitBy(omit(Object.assign({}, variables), keys), isNil);
-    console.log('tes aja ya:,', body);
+    console.log('tes aja ya ini update:,', body);
 
     if (body.Price) {
       body.Price = +body.Price;
@@ -197,6 +200,9 @@ export const DashboardDataProvider = (
     }
     if (body.Size) {
       body.Size = +body.Size;
+    }
+    if (body.TransportationID) {
+      body.TransportationID = +body.TransportationID;
     }
     const url = `${apiUrl}/${resource}/patch?${stringify({ id })}`;
 

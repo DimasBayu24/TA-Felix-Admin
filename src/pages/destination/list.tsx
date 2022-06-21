@@ -49,6 +49,20 @@ export const DestinationList: React.FC<IResourceComponentsProps> = () => {
           title="Price"
           render={(value) => <TextField value={value} />}
         />
+        <Table.Column
+          dataIndex="Description"
+          key="Description"
+          title="Description"
+          render={(value) => <TextField value={value} />}
+        />
+        <Table.Column
+          dataIndex="PictureUrl"
+          key="PictureUrl"
+          title="Picture Url"
+          render={(value) => <TextField value={value} />}
+          defaultSortOrder={getDefaultSortOrder('PictureUrl', sorter)}
+          sorter
+        />
         <Table.Column<IDestination>
           title="Actions"
           dataIndex="actions"

@@ -15,11 +15,21 @@ export const ProductPackageShow: React.FC<IResourceComponentsProps> = () => {
       <Title level={5}>Package</Title>
       <Text>{record?.Package}</Text>
 
-      <Title level={5}>Destination Place</Title>
-      <Text>{record?.DestinationPlace}</Text>
+      <Title level={5}>Destination City</Title>
+      <Text>{record?.DestinationCity}</Text>
+
+      <Title level={5}>Description</Title>
+      <Text>{record?.Description}</Text>
 
       <Title level={5}>Price</Title>
-      <Text>{record?.Price}</Text>
+      <Text>{record?.PricePackage}</Text>
+
+      <Title level={5}>TransportationID</Title>
+      <Text>{record?.TransportationID}</Text>
+
+      <Title level={5}>Picture URL</Title>
+      <Text>{record?.PictureUrl}</Text>
+      <img src={record?.PictureUrl} />
     </Show>
   );
 };

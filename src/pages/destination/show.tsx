@@ -20,6 +20,13 @@ export const DestinationShow: React.FC<IResourceComponentsProps> = () => {
 
       <Title level={5}>Price</Title>
       <Text>{record?.Price}</Text>
+
+      <Title level={5}>Description</Title>
+      <Text>{record?.Description}</Text>
+
+      <Title level={5}>Picture URL</Title>
+      <Text>{record?.PictureUrl}</Text>
+      <img src={record?.PictureUrl} />
     </Show>
   );
 };
