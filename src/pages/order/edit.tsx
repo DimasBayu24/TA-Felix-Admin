@@ -1,5 +1,5 @@
 import { IResourceComponentsProps } from '@pankod/refine-core';
-import { Edit, Form, Input, useForm } from '@pankod/refine-antd';
+import { Edit, Form, Input, useForm, Select } from '@pankod/refine-antd';
 
 import 'react-mde/lib/styles/css/react-mde-all.css';
 
@@ -14,8 +14,8 @@ export const OrderEdit: React.FC<IResourceComponentsProps> = () => {
     <Edit saveButtonProps={saveButtonProps}>
       <Form {...formProps} layout="vertical">
         <Form.Item
-          label="User ID"
-          name="UserID"
+          label="Fullname"
+          name="Fullname"
           rules={[
             {
               required: true,
@@ -33,7 +33,18 @@ export const OrderEdit: React.FC<IResourceComponentsProps> = () => {
             },
           ]}
         >
-          <Input />
+          <Select
+            options={[
+              {
+                label: 'Not Done',
+                value: 'Not_Done',
+              },
+              {
+                label: 'Done',
+                value: 'Done',
+              },
+            ]}
+          />
         </Form.Item>
         <Form.Item
           label="Total Price"

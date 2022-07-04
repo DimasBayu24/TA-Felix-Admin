@@ -85,11 +85,19 @@ export interface ICustomer {
 
 export interface IOrder {
   ID: string;
-  UserID: string;
-  Status: 'not_done' | 'done';
+  Status: 'Not Done' | 'Done';
   TransportationID: string;
+  Fullname: string;
+  Status: string;
   TransportationQty: number;
   TotalPrice: number;
+  DestinationPackageID: number;
+  IsPackage: boolean;
+  Email: string;
+  Phone: string;
+  OrderDate: Date;
+  PictureUrl: string;
+  Duration: number;
 }
 
 export interface IProductPackage {

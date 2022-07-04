@@ -12,8 +12,8 @@ export const OrderShow: React.FC<IResourceComponentsProps> = () => {
 
   return (
     <Show isLoading={isLoading}>
-      <Title level={5}>User ID</Title>
-      <Text>{record?.UserID}</Text>
+      <Title level={5}>Full Name</Title>
+      <Text>{record?.Fullname}</Text>
 
       <Title level={5}>Status</Title>
       <Text>{record?.Status}</Text>

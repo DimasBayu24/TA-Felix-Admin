@@ -22,36 +22,14 @@ export const OrderList: React.FC<IResourceComponentsProps> = () => {
     ],
   });
 
-  const userIds = tableProps?.dataSource?.map((item) => item.UserID) ?? [];
-  const { data: categoriesData, isLoading } = useMany<ICustomer>({
-    resource: 'user',
-    ids: userIds,
-    queryOptions: {
-      enabled: userIds.length > 0,
-    },
-  });
-
   return (
     <List>
       <Table {...tableProps} rowKey="id">
         <Table.Column
-          dataIndex="ID"
-          key="ID"
-          title="ID"
+          dataIndex="Fullname"
+          key="Fullname"
+          title="Fullname"
           render={(value) => <TextField value={value} />}
-        />
-        <Table.Column
-          dataIndex="ID"
-          title="UserID"
-          render={(value) => {
-            if (isLoading) {
-              return <TextField value="Loading..." />;
-            }
-
-            return (
-              <TextField value={categoriesData?.data.find((item) => item.ID === value)?.Fullname} />
-            );
-          }}
         />
         <Table.Column
           dataIndex="Status"

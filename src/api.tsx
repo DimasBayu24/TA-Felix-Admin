@@ -80,6 +80,9 @@ export const DashboardDataProvider = (
     if (body.TransportationID) {
       body.TransportationID = +body.TransportationID;
     }
+    if (body.PricePackage) {
+      body.PricePackage = +body.PricePackage;
+    }
     const url = `${apiUrl}/${resource}`;
 
     const { data } = await httpClient.post(url, body);
@@ -203,6 +206,9 @@ export const DashboardDataProvider = (
     }
     if (body.TransportationID) {
       body.TransportationID = +body.TransportationID;
+    }
+    if (body.PricePackage) {
+      body.PricePackage = +body.PricePackage;
     }
     const url = `${apiUrl}/${resource}/patch?${stringify({ id })}`;
 
