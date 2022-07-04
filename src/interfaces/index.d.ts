@@ -108,6 +108,7 @@ export interface IProductPackage {
   PictureUrl: string;
   Description: string;
   TransportationID: number;
+  Duration: number;
 }
 
 export interface ITransportation {

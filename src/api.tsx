@@ -83,6 +83,9 @@ export const DashboardDataProvider = (
     if (body.PricePackage) {
       body.PricePackage = +body.PricePackage;
     }
+    if (body.Duration) {
+      body.Duration = +body.Duration;
+    }
     const url = `${apiUrl}/${resource}`;
 
     const { data } = await httpClient.post(url, body);
@@ -209,6 +212,9 @@ export const DashboardDataProvider = (
     }
     if (body.PricePackage) {
       body.PricePackage = +body.PricePackage;
+    }
+    if (body.Duration) {
+      body.Duration = +body.Duration;
     }
     const url = `${apiUrl}/${resource}/patch?${stringify({ id })}`;
 

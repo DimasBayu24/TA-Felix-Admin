@@ -12,6 +12,9 @@ export const OrderShow: React.FC<IResourceComponentsProps> = () => {
 
   return (
     <Show isLoading={isLoading}>
+      <Title level={5}>ID</Title>
+      <Text>{record?.ID}</Text>
+
       <Title level={5}>Full Name</Title>
       <Text>{record?.Fullname}</Text>
 
@@ -26,6 +29,10 @@ export const OrderShow: React.FC<IResourceComponentsProps> = () => {
 
       <Title level={5}>Transportation Qty</Title>
       <Text>{record?.TransportationQty}</Text>
+
+      <Title level={5}>Payment Picture</Title>
+      <Text>{record?.PictureUrl}</Text>
+      <img src={record?.PictureUrl} />
     </Show>
   );
 };

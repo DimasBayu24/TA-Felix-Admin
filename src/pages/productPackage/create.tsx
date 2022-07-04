@@ -56,6 +56,17 @@ export const ProductPackageCreate: React.FC<IResourceComponentsProps> = () => {
           <Input type="number" />
         </Form.Item>
         <Form.Item
+          label="Duration"
+          name="Duration"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Input type="number" />
+        </Form.Item>
+        <Form.Item
           label="TransportationID"
           name="TransportationID"
           rules={[

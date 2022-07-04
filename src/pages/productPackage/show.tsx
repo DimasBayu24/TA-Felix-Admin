@@ -24,6 +24,9 @@ export const ProductPackageShow: React.FC<IResourceComponentsProps> = () => {
       <Title level={5}>Price</Title>
       <Text>{record?.PricePackage}</Text>
 
+      <Title level={5}>Duration</Title>
+      <Text>{record?.Duration}</Text>
+
       <Title level={5}>TransportationID</Title>
       <Text>{record?.TransportationID}</Text>
 

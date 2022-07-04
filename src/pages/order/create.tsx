@@ -11,8 +11,8 @@ export const OrderCreate: React.FC<IResourceComponentsProps> = () => {
     <Create saveButtonProps={saveButtonProps}>
       <Form {...formProps} layout="vertical">
         <Form.Item
-          label="User ID"
-          name="UserID"
+          label="Fullname"
+          name="Fullname"
           rules={[
             {
               required: true,
@@ -33,12 +33,12 @@ export const OrderCreate: React.FC<IResourceComponentsProps> = () => {
           <Select
             options={[
               {
-                label: 'not done',
-                value: 'not_done',
+                label: 'Not Done',
+                value: 'Not_Done',
               },
               {
-                label: 'done',
-                value: 'done',
+                label: 'Done',
+                value: 'Done',
               },
             ]}
           />

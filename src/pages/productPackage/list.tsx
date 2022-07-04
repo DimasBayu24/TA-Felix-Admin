@@ -56,6 +56,12 @@ export const ProductPackageList: React.FC<IResourceComponentsProps> = () => {
           render={(value) => <TextField value={value} />}
         />
         <Table.Column
+          dataIndex="Duration"
+          key="Duration"
+          title="Duration"
+          render={(value) => <TextField value={value} />}
+        />
+        <Table.Column
           dataIndex="TransportationID"
           key="TransportationID"
           title="Price"

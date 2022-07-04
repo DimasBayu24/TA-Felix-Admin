@@ -26,6 +26,12 @@ export const OrderList: React.FC<IResourceComponentsProps> = () => {
     <List>
       <Table {...tableProps} rowKey="id">
         <Table.Column
+          dataIndex="ID"
+          key="ID"
+          title="ID"
+          render={(value) => <TextField value={value} />}
+        />
+        <Table.Column
           dataIndex="Fullname"
           key="Fullname"
           title="Fullname"
@@ -47,6 +53,12 @@ export const OrderList: React.FC<IResourceComponentsProps> = () => {
           dataIndex="TransportationID"
           key="TransportationID"
           title="Transportation ID"
+          render={(value) => <TextField value={value} />}
+        />
+        <Table.Column
+          dataIndex="PictureUrl"
+          key="PictureUrl"
+          title="PictureUrl"
           render={(value) => <TextField value={value} />}
         />
         <Table.Column
